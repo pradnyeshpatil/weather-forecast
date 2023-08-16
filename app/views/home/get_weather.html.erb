@@ -1,0 +1,19 @@
+<div class="card card-body border-0 main-background">
+  <%= form_with url: "/", method: :get do |form| %>
+    <div class="col">
+      <%= form.label :city, "Enter city name:" %>
+      <%= form.text_field :city_name, required: "required" %>
+      <%= submit_tag "Get Weather", class: 'btn btn-primary ' %>
+    </div>
+  <% end %>
+</div>
+<div class="card">
+  <div class="card-body">
+    <% if @error %>
+    <h5><%= @error %></h5>
+    <% else %>
+      <h2><%= "Tempreture for the#{@city}: #{@temp}"%></h2>
+    <% end %>
+  </div>
+</div>
+
